@@ -1,0 +1,21 @@
+.button {
+    display: block;
+    margin: 0 auto 16px;
+    border-radius: 8px;
+    min-height: 47px;
+    min-width: 216px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 11px 33px;
+    &-remove{
+        background: none;
+        color: #F5E5E7ff;
+        min-height: 23px;
+        min-width: 184px;
+        font-size: 14px;
+        line-height: 16px;
+        margin: 0 auto;
+    
+    }
+}
