@@ -1,12 +1,29 @@
 import '../scss/main.scss';
 
 // uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
+import {registerSW} from './pwa.js';
+registerSW();
 
 /* place your code below */
 
 console.log('HELLO 🚀')
+
+
+import moment from 'moment';
+import 'moment/locale/pl';
+console.log(moment);
+
+const todayDay =  moment().format('dddd');
+
+const todayPlaceholder = document.querySelector('.today--js');
+todayPlaceholder.innerHTML = todayDay;
+
+console.log(todayDay);
+
+
+
+
+
 
 const glassCounter = document.querySelector('.glass__counter--js');
 const buttonAdd = document.querySelector('.button--js');
