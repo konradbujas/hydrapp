@@ -1,14 +1,28 @@
 .app{
+  
+  text-align: center;
+  font-family: Roboto;
     &__title{
-      font-family: Roboto;
       font-style: normal;
       font-weight: 500;
       font-size: 55px;
       line-height: 64px;
-      text-align: center;
       margin: 0 0 30px;
     }
-    &__today{
+    &__today {
+      color: white;
+      font-size: 20px;
+      display: block;
+      margin: 0 0 30px;
+      
+    }
+    &__welcome {
+      display: block;
+      color: black;
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 500;
       margin: 0 0 12px;
+      
     }
   }

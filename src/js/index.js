@@ -1,8 +1,8 @@
 import '../scss/main.scss';
 
 // uncomment the lines below to enable PWA
-import {registerSW} from './pwa.js';
-registerSW();
+// import {registerSW} from './pwa.js';
+// registerSW();
 
 /* place your code below */
 
@@ -13,22 +13,22 @@ import moment from 'moment';
 import 'moment/locale/pl';
 console.log(moment);
 
-const todayDay =  moment().format('dddd');
+const todayIs =  moment().format('LLLL');
 
 const todayPlaceholder = document.querySelector('.today--js');
-todayPlaceholder.innerHTML = todayDay;
+todayPlaceholder.innerHTML = todayIs;
 
-console.log(todayDay);
+console.log(todayIs);
 
-
-
-
-
-
+// definiowanie zmiennych przycisków
 const glassCounter = document.querySelector('.glass__counter--js');
 const buttonAdd = document.querySelector('.button--js');
 const buttonRemove = document.querySelector('.button-remove--js');
 const key = new Date().toISOString().slice(0, 10);
+
+// Zmiana z moment na Date()
+// // const now = new Date().toLocaleDateString().slice(0, 10); 
+// // console.log(now)
 
 let currentGlassCounter = 0;
 
