@@ -1,3 +1,15 @@
+@keyframes glassOut {
+    0%{
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(95deg);
+    }
+    
+}
+
+
+
 .glass {
     width: 280px;
     height: 280px;
@@ -6,11 +18,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     &__counter{
         color: #000;
         font-size: 112px;
         font-weight: 500;
-        margin: 58px 0 0 0;
+        margin: 68px 0 0 0;
     }
-}
+    &--animated{
+        transform-origin: right bottom;
+        animation: glassOut 3s ease-in-out alternate;
+    }
+}  

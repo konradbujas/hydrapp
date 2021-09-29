@@ -13,7 +13,7 @@ import moment from 'moment';
 import 'moment/locale/pl';
 console.log(moment);
 
-const todayIs =  moment().format('LLLL </br></br> h:mm:ss');
+const todayIs =  moment().format('LLLL </br></br> hh:mm:ss');
 
 const todayPlaceholder = document.querySelector('.today--js');
 todayPlaceholder.innerHTML = todayIs;
@@ -72,5 +72,20 @@ buttonRemove.addEventListener('click', () => {
     currentGlassCounter--;
     glassCounter.innerHTML = currentGlassCounter;
     localStorage.setItem(key, currentGlassCounter);
+
+
+    // const glassOut = document.querySelector('.glass--js');
+    // glassOut.classList.toggl('');
+  
+
+    const glassOut = document.querySelector('.glass--js');
+    glassOut.classList.add('glass--animated');
+ 
+    function remove() {
+        glassOut.classList.remove('glass--animated');
+    }
+ 
+    setTimeout(remove, 3000);
+
     }    
 });
