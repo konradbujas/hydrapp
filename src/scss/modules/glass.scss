@@ -8,6 +8,30 @@
     
 }
 
+@keyframes scaleDown {
+    from{
+        transform: scale(1);
+        opacity: 1;
+        transform: rotate(0);
+    }
+    to{
+        transform: scale(0.9);
+        opacity: 0.7;
+        transform: rotate(60deg);
+    }
+}
+
+
+@keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+    to {
+      transform: rotateY(-720deg);
+      opacity: 0,5;
+    }
+  }
 
 
 .glass {
@@ -27,14 +51,15 @@
     }
     &--animated{
         transform-origin: right bottom;
-        animation: glassOut 3s ease-in-out alternate;
+        animation: scaleDown 1.2s cubic-bezier(0.49,-0.63, 0.04, 1.47) alternate ;
     }
 }  
 
 .animated {
     &__add{
-        transform-origin: left bottom;
-        animation: glassOut 3s ease-in-out alternate;
+        // transform-origin: left bottom;
+        // animation: glassOut 3s ease-in-out alternate;
+        
+        animation: rotate ease-in-out 1s alternate;
     }
-
 }

@@ -38,8 +38,8 @@ console.log(data);
 const glassCounter = document.querySelector('.glass__counter--js');
 const buttonAdd = document.querySelector('.button--js');
 const buttonRemove = document.querySelector('.button-remove--js');
-const key = new Date().toISOString().slice(0, 10);
-const timeAnimation = 3000;
+const key = new Date().toLocaleDateString().slice(0, 10);
+
 
 // Zmiana z moment na Date()
 // // const now = new Date().toLocaleDateString().slice(0, 10); 
@@ -63,23 +63,16 @@ glassCounter.innerHTML = currentGlassCounter;
 
 
 buttonAdd.addEventListener('click', () => {
+    const glassAdd = document.querySelector('.glass__counter--js');
+
     currentGlassCounter++;
     glassCounter.innerHTML = currentGlassCounter;
     localStorage.setItem(key, currentGlassCounter);
-
-    const glassAdd = document.querySelector('.glass__counter--js');
+    glassAdd.classList.remove('animated__add');
+    void glassCounter.offsetWidth;
+    
     glassAdd.classList.add('animated__add');
     
-    function remove() {
-        glassAdd.classList.remove('animated__add');
-    }
-
-    setTimeout(remove, timeAnimation);
-
-    
-
-
-
 });
 
 buttonRemove.addEventListener('click', () => {
@@ -87,20 +80,17 @@ buttonRemove.addEventListener('click', () => {
     currentGlassCounter--;
     glassCounter.innerHTML = currentGlassCounter;
     localStorage.setItem(key, currentGlassCounter);
-
-
     // const glassOut = document.querySelector('.glass--js');
     // glassOut.classList.toggl('');
-  
-
     const glassOut = document.querySelector('.glass--js');
-    glassOut.classList.add('glass--animated');
- 
-    function remove() {
-        glassOut.classList.remove('glass--animated');
-    }
- 
-    setTimeout(remove, timeAnimation);
+    glassOut.classList.remove('glass--animated');
+    
 
-    }    
+    buttonRemove.addEventListener('click', () => {
+        if (currentGlassCounter > 0)
+        glassOut.classList.remove('glass--animated');
+        setTimeout(() => glassOut.classList.add('glass--animated'), 0);
+      }, false);
+
+    }
 });
