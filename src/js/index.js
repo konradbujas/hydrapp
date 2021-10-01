@@ -39,6 +39,7 @@ const glassCounter = document.querySelector('.glass__counter--js');
 const buttonAdd = document.querySelector('.button--js');
 const buttonRemove = document.querySelector('.button-remove--js');
 const key = new Date().toISOString().slice(0, 10);
+const timeAnimation = 3000;
 
 // Zmiana z moment na Date()
 // // const now = new Date().toLocaleDateString().slice(0, 10); 
@@ -65,6 +66,20 @@ buttonAdd.addEventListener('click', () => {
     currentGlassCounter++;
     glassCounter.innerHTML = currentGlassCounter;
     localStorage.setItem(key, currentGlassCounter);
+
+    const glassAdd = document.querySelector('.glass__counter--js');
+    glassAdd.classList.add('animated__add');
+    
+    function remove() {
+        glassAdd.classList.remove('animated__add');
+    }
+
+    setTimeout(remove, timeAnimation);
+
+    
+
+
+
 });
 
 buttonRemove.addEventListener('click', () => {
@@ -85,7 +100,7 @@ buttonRemove.addEventListener('click', () => {
         glassOut.classList.remove('glass--animated');
     }
  
-    setTimeout(remove, 3000);
+    setTimeout(remove, timeAnimation);
 
     }    
 });

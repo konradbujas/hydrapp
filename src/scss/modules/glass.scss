@@ -30,3 +30,11 @@
         animation: glassOut 3s ease-in-out alternate;
     }
 }  
+
+.animated {
+    &__add{
+        transform-origin: left bottom;
+        animation: glassOut 3s ease-in-out alternate;
+    }
+
+}
