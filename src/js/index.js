@@ -84,7 +84,7 @@ buttonRemove.addEventListener('click', () => {
     // glassOut.classList.toggl('');
     const glassOut = document.querySelector('.glass--js');
     glassOut.classList.remove('glass--animated');
-    
+    glassOut.classList.add('glass--animated');
 
     buttonRemove.addEventListener('click', () => {
         if (currentGlassCounter > 0)
