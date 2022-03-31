@@ -1,4 +1,4 @@
-![cover](https://konradbujas.github.io/hydrapp/public/og.png)
+![cover](https://konradbujas.github.io/hydrapp/og.png)
 
 # Hydrapp - Count Your Glasses of Water App ;) 
 
